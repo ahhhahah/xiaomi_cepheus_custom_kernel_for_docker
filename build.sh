@@ -25,7 +25,7 @@ sh -c "$(curl -sSL https://github.com/akhilnarang/scripts/raw/master/setup/andro
 
 echo "=========================Clean========================="
 rm -rf $KERNEL_PATH/out/ *.zip
-make mrproper && git reset --hard HEAD
+make mrproper # && git reset --hard HEAD
 
 echo "=========================Build========================="
 make O=out cepheus_defconfig
@@ -35,7 +35,7 @@ if [ ! -e $KERNEL_PATH/out/arch/arm64/boot/Image.gz-dtb ]; then
     echo "=======================FAILED!!!======================="
     rm -rf $ANYKERNEL_PATH
     make mrproper>/dev/null 2>&1
-    git reset --hard HEAD 2>&1
+    # git reset --hard HEAD 2>&1
     exit -1>/dev/null 2>&1
 fi
 
