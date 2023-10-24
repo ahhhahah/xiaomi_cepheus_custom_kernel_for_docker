@@ -32,7 +32,7 @@ jobs:
         with:
           automatic_release_tag: "latest"
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          # automatic_release_tag: "latest"
           prerelease: false
           files: |
             out/*.zip
